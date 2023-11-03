@@ -20,6 +20,16 @@ connect();
 const router = express.Router();
 
 //ROUTES
+//Paso 21
+router.get("/zapatillas", async (req, res) => {
+  try {
+    const zapatillas = await Zapatilla.find();
+    return res.status(200).json(zapatillas);
+  } catch (error) {
+    return res.status(404).json("Zapatillas not found", error);
+  }
+});
+
 //Paso 22
 router.post("/create", async (req, res) => {
   try {
@@ -29,15 +39,6 @@ router.post("/create", async (req, res) => {
     return res.status(201).json(newZapatilla);
   } catch (error) {
     return res.status(400).json("Error creating zapatilla", error);
-  }
-});
-//Paso 21
-router.get("/zapatillas", async (req, res) => {
-  try {
-    const zapatillas = await Zapatilla.find();
-    return res.status(200).json(zapatillas);
-  } catch (error) {
-    return res.status(404).json("Zapatillas not found", error);
   }
 });
 
