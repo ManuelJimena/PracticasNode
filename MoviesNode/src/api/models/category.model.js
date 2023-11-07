@@ -7,7 +7,7 @@ const CategorySchema = new mongoose.Schema(
         movies: [{ type: mongoose.Types.ObjectId, ref: "movie" }],
     },
     {
-        timestamps: tru,
+        timestamps: true,
     }
 );
 

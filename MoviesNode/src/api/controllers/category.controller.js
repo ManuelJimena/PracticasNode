@@ -1,3 +1,5 @@
+const Category = require("../models/category.model");
+
 const getCategories = async (req, res) => {
     try {
       const categories = await Category.find().populate("movies");
