@@ -8,7 +8,7 @@ const getMovies = async (req, res) => {
         return res.status(404).json("Movies not found", error);
       }
 };
- const getMovieByID = async (rq, res) => {
+ const getMovieByID = async (req, res) => {
     try {
         const { id } = req.params;
         const movie = await Movie.findById(id);
